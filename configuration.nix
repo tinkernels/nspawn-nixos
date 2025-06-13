@@ -20,7 +20,7 @@
     wget
   ];
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.05";
 
   # Set an initial password here or at runtime do `machinectl shell nixos` and
   # run `passwd` there.
