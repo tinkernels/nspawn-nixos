@@ -23,6 +23,13 @@ jobs:
         with:
           init: systemd
 
+      - name: Configure Nix for CI
+        run: |
+            echo "max-jobs = auto" | sudo tee -a /etc/nix/nix.conf
+            echo "cores = 0" | sudo tee -a /etc/nix/nix.conf
+            echo "sandbox = false" | sudo tee -a /etc/nix/nix.conf
+            sudo systemctl restart nix-daemon
+
       - name: Building tarball for ${{ matrix.arch }}
         run: nix build
 
