@@ -26,7 +26,7 @@ jobs:
         run: nix build
 
       - name: Uploading artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nixos-system-${{ matrix.arch }}.tar.xz
           path: result/tarball/nixos-system-${{ matrix.arch }}.tar.xz
